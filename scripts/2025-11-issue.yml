@@ -1,0 +1,12 @@
+issue: "2025-11"
+articles:
+  - slug: editorial
+    title_hint: "Why Local Wins"
+    bullets:
+      - "Local-first tech"
+      - "Culture of sovereignty"
+  - slug: feature-interview
+    title_hint: "Interview with a Local Leader"
+    bullets:
+      - "Grassroots community building"
+      - "Challenges of decentralization"
