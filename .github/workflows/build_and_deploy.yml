@@ -1,0 +1,58 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          sudo apt-get update -y
+          sudo apt-get install -y pandoc texlive texlive-fonts-recommended texlive-latex-extra
+
+      - name: Build static site
+        run: |
+          # Convert each draft to HTML using pandoc and assemble an index page.
+          SITE_DIR="site"
+          mkdir -p "$SITE_DIR"
+          echo "<h1>Inkluso Magazine</h1>" > "$SITE_DIR/index.html"
+          for f in content/drafts/*/*/draft.md; do
+            issue=$(echo "$f" | cut -d'/' -f3)
+            slug=$(echo "$f" | cut -d'/' -f4)
+            out_html="$SITE_DIR/${issue}-${slug}.html"
+            pandoc "$f" -s -o "$out_html"
+            echo "<li><a href='${issue}-${slug}.html'>${issue} – ${slug}</a></li>" >> "$SITE_DIR/index.html"
+          done
+
+      - name: Build PDF issue
+        run: |
+          ISSUE_DATE=$(date +%Y-%m)
+          mkdir -p dist
+          pandoc content/drafts/*/*/draft.md -s -o "dist/Issue_${ISSUE_DATE}.pdf" || echo "No drafts found yet. PDF not generated."
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: inkluso-issue-pdf
+          path: dist/*.pdf
