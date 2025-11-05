@@ -29,6 +29,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+           PYTHONPATH: ${{ github.workspace }}
         run: |
           python scripts/run_pipeline.py --brief ${{ github.event.inputs.brief_path }}
 
