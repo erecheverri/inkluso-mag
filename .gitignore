@@ -1,0 +1,1 @@
+__pycache__/\n*.pyc\n.venv/\n.env\ndist/\nnode_modules/\n*.log\n*.pdf\ncontent/drafts/*
