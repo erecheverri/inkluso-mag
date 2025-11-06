@@ -3,19 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IN-KluSo Magazine</title>
+  <title>IN KluSo Magazine</title>
   <link rel="stylesheet" href="css/inkluso.css">
+  <style>
+    .hero {
+      background-color: var(--ink-background);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 80vh;
+      text-align: center;
+    }
+    .hero .logo {
+      font-family: var(--ink-font-heading);
+      font-size: 4rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .hero .tagline {
+      font-family: var(--ink-font-body);
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    .issues {
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .issue-card {
+      background: var(--ink-background);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      max-width: 400px;
+      text-align: center;
+      margin: 1rem;
+    }
+    .issue-card h2 {
+      font-family: var(--ink-font-heading);
+      color: var(--ink-accent);
+      margin-bottom: 0.5rem;
+    }
+    .issue-card p {
+      font-family: var(--ink-font-body);
+      color: var(--ink-text);
+    }
+    .issue-card a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <header class="masthead">
-    <h1>IN-KluSo Magazine</h1>
-    <p class="tagline">Where information becomes immersion.</p>
+  <header class="hero">
+    <div class="logo">IN KluSo</div>
+    <div class="tagline">Where information becomes immersion.</div>
   </header>
   <section class="issues">
-    <article class="issue">
+    <article class="issue-card">
       <a href="issue-handmade-future/issue-handmade-future/index.html">
         <h2>The Handmade Future</h2>
-        <p>A special issue by SIG1 × LOTI × GOBLINO.</p>
+        <p>A special issue by Mae, Harold & Edith.</p>
       </a>
     </article>
   </section>
