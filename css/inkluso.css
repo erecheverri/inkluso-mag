@@ -1,13 +1,12 @@
 :root {
-  --ink-accent: #222222;
-  --ink-background: #fdfaf5;
-  --ink-text: #222222;
+  --ink-background: #F5EEE0;
+  --ink-text: #000000;
+  --ink-accent: #E9791C;
   --ink-muted: #666666;
   --ink-font-body: 'Inter', sans-serif;
   --ink-font-heading: 'Playfair Display', serif;
 }
 
-/* Global styles */
 body {
   margin: 0;
   padding: 0;
@@ -33,7 +32,7 @@ body {
   margin: 3em auto;
 }
 
-.issue {
+.issue, .issue-card {
   margin-bottom: 2em;
   padding: 1em;
   border: 1px solid #ddd;
@@ -43,14 +42,14 @@ body {
   background-color: #fff;
 }
 
-.issue h2 {
+.issue h2, .issue-card h2 {
   font-family: var(--ink-font-heading);
   color: var(--ink-accent);
   font-size: 1.5em;
   margin: 0.5em 0;
 }
 
-.issue p {
+.issue p, .issue-card p {
   color: var(--ink-text);
 }
 
