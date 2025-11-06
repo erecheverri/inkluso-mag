@@ -1,13 +1,19 @@
 :root {
-  --ink-accent: #333333;
+  --ink-accent: #222222;
+  --ink-background: #fdfaf5;
+  --ink-text: #222222;
+  --ink-muted: #666666;
+  --ink-font-body: 'Inter', sans-serif;
+  --ink-font-heading: 'Playfair Display', serif;
 }
 
+/* Global styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fdfaf5;
-  color: #222;
+  font-family: var(--ink-font-body);
+  background-color: var(--ink-background);
+  color: var(--ink-text);
 }
 
 .masthead {
@@ -17,7 +23,7 @@ body {
 
 .tagline {
   font-style: italic;
-  color: #666;
+  color: var(--ink-muted);
 }
 
 .issues {
@@ -34,19 +40,34 @@ body {
   border-radius: 8px;
   max-width: 600px;
   text-align: center;
+  background-color: #fff;
 }
 
 .issue h2 {
+  font-family: var(--ink-font-heading);
   color: var(--ink-accent);
   font-size: 1.5em;
   margin: 0.5em 0;
 }
 
 .issue p {
-  color: #444;
+  color: var(--ink-text);
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Responsive layout for issue pages */
+@media (max-width: 1024px) {
+  .page { column-count: 3; }
+}
+
+@media (max-width: 768px) {
+  .page { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+  .page { column-count: 1; }
 }
