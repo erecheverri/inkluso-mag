@@ -1,0 +1,52 @@
+:root {
+  --ink-accent: #333333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdfaf5;
+  color: #222;
+}
+
+.masthead {
+  text-align: center;
+  padding: 3em 1em;
+}
+
+.tagline {
+  font-style: italic;
+  color: #666;
+}
+
+.issues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em auto;
+}
+
+.issue {
+  margin-bottom: 2em;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.issue h2 {
+  color: var(--ink-accent);
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.issue p {
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
