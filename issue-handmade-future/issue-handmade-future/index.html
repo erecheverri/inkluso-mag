@@ -8,10 +8,40 @@
   <link rel="stylesheet" href="../css/inkluso.css">
   <style>
     /* Minimal inline styles for multi-column layout; brand tokens defined in inkluso.css */
-    .page { column-count: 4; column-gap: 2em; max-width: 1300px; margin: 4em auto; padding: 0 2em; }
-    h2 { font-family: 'Playfair Display', serif; color: var(--ink-accent, #333); font-size: 1.8em; margin-top: 0; }
-    p::first-letter { font-size: 2em; float: left; padding-right: 0.1em; font-family: 'Playfair Display', serif; }
-    blockquote { font-style: italic; margin-left: 1em; border-left: 2px solid #ccc; padding-left: 1em; }
+    .page {
+      column-count: 4;
+      column-gap: 2em;
+      max-width: 1300px;
+      margin: 4em auto;
+      padding: 0 2em;
+    }
+    @media (max-width: 1024px) {
+      .page { column-count: 3; }
+    }
+    @media (max-width: 768px) {
+      .page { column-count: 2; }
+    }
+    @media (max-width: 480px) {
+      .page { column-count: 1; }
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--ink-accent);
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+    p::first-letter {
+      font-size: 2em;
+      float: left;
+      padding-right: 0.1em;
+      font-family: 'Playfair Display', serif;
+    }
+    blockquote {
+      font-style: italic;
+      margin-left: 1em;
+      border-left: 2px solid #ccc;
+      padding-left: 1em;
+    }
   </style>
 </head>
 <body>
